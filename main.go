@@ -11,6 +11,7 @@ func main(){
 	p.save()
 	http.HandleFunc("/test/", view)
 	http.HandleFunc("/edit/", edit)
+	http.HandleFunc("/save/", save)
 	http.ListenAndServe(":8080", nil)
 }
 
