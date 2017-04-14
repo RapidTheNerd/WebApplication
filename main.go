@@ -7,13 +7,12 @@ import (
 )
 
 func main(){
-	http.HandleFunc("/", responseWriter)
+	p := &Page{title: "some title", body: []byte("a test page...idk")}
+	p.save()
+	http.HandleFunc("/test/", view)
 	http.ListenAndServe(":8080", nil)
 }
 
-func responseWriter(w http.ResponseWriter, req * http.Request){
-	w.Write([]byte("General test"))
-}
 
 type Page struct {
 	title string
