@@ -7,7 +7,7 @@ import (
 )
 
 func main(){
-	p := &Page{title: "some title", body: []byte("a test page...idk")}
+	p := &Page{title: "test", body: []byte("a test page...idk")}
 	p.save()
 	http.HandleFunc("/test/", view)
 	http.ListenAndServe(":8080", nil)
@@ -36,5 +36,4 @@ func load(title string) (*Page, error){
 func view(w http.ResponseWriter, r * http.Request){
 	title := r.URL.Path[len("/test/"):]
 	p, _ := load(title)
-	fmt.Fprintf(w, "<h1>%s</h1><div>&s</div>", p.title, p.body)
 }
