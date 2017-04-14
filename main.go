@@ -15,7 +15,6 @@ func main(){
 	http.ListenAndServe(":8080", nil)
 }
 
-
 type Page struct {
 	title string
 	body []byte
@@ -27,7 +26,7 @@ func(p* Page) save() error {
 }
 
 func load(title string) (*Page, error){
-	f:= title+ ".txt"
+	f := title+ ".txt"
 	body, err := ioutil.ReadFile(f)
 	if err != nil{
 		return nil, err
