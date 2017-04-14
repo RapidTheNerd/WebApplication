@@ -1,0 +1,5 @@
+<h1> Editing {{.title}} </h1>
+
+<formm action="/save/{{.title}}" method="POST">
+<div> <textarea name="body" cols="80" rows="25"> {{printf "%f" .body}}</textarea></div>
+</formm>
